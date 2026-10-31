@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Management</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:640px;margin:2rem auto;padding:0 1rem}
+  input,button{padding:.5rem;margin:.2rem 0;width:100%;box-sizing:border-box}
+  button{cursor:pointer}
+  li{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #ddd}
+  li button{width:auto}
+</style>
+</head>
+<body>
+<h1>Student Management</h1>
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="course" placeholder="Course">
+<button onclick="addStudent()">Add Student</button>
+<ul id="list"></ul>
+<script>
+async function load(){
+  const r = await fetch('/students'); const data = await r.json();
+  document.getElementById('list').innerHTML = data.map(s =>
+    `<li><span>${s.name} – ${s.course}<br><small>${s.email}</small></span>
+     <button onclick="del(${s.id})">Delete</button></li>`).join('');
+}
+async function addStudent(){
+  const nameEl = document.getElementById('name');
+  const emailEl = document.getElementById('email');
+  const courseEl = document.getElementById('course');
+  const body = {name: nameEl.value, email: emailEl.value, course: courseEl.value};
+  const r = await fetch('/students',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok) return alert('All fields are required');
+  nameEl.value = emailEl.value = courseEl.value = '';
+  load();
+}
+async function del(id){ await fetch('/students/'+id,{method:'DELETE'}); load(); }
+load();
+</script>
+</body>
+</html>
