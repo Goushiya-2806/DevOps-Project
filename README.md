@@ -37,13 +37,16 @@ REST API + small web UI (Node.js/Express, in-memory storage).
 ## Screenshots
 
 ### Application UI
-![Application UI](C:\Users\DELL\Pictures\Screenshots\Screenshot 2026-10-31 193141.png)
+![Application UI]<img width="1060" height="432" alt="Screenshot 2026-10-31 193141" src="https://github.com/user-attachments/assets/ba19580b-aef8-4ad0-bb0e-70432935cbfc" />
+
 
 ### GET /students
-![Students API](screenshots/students-api.png)
+![Students API]<img width="996" height="422" alt="Screenshot 2026-10-31 193148" src="https://github.com/user-attachments/assets/76d92bfc-a698-407c-b85a-7681d3c0af24" />
+
 
 ### GET /health
-![Health check](screenshots/health.png)
+![Health check]<img width="1917" height="723" alt="Screenshot 2026-10-31 193153" src="https://github.com/user-attachments/assets/32d84625-06af-4732-8466-9a4f18b89baf" />
+
 
 ## 2. Jenkins
 1. Install plugins: Git, Pipeline, NodeJS.
