@@ -37,7 +37,7 @@ REST API + small web UI (Node.js/Express, in-memory storage).
 ## Screenshots
 
 ### Application UI
-![Application UI](screenshots/app-ui.png)
+![Application UI](C:\Users\DELL\Pictures\Screenshots\Screenshot 2026-10-31 193141.png)
 
 ### GET /students
 ![Students API](screenshots/students-api.png)
