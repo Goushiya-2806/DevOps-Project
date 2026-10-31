@@ -33,6 +33,18 @@ REST API + small web UI (Node.js/Express, in-memory storage).
     git log --oneline
     git push
 
+
+## Screenshots
+
+### Application UI
+![Application UI](screenshots/app-ui.png)
+
+### GET /students
+![Students API](screenshots/students-api.png)
+
+### GET /health
+![Health check](screenshots/health.png)
+
 ## 2. Jenkins
 1. Install plugins: Git, Pipeline, NodeJS.
 2. Manage Jenkins > Tools > add NodeJS installation named `node18`.
